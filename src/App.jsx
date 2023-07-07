@@ -3,12 +3,17 @@ import React from 'react'
 
 function App() {
   const [sobrenome, setSobrenome] = React.useState('Queiroz')
+  const [nome, setNome] = React.useState('Morfar')
 
   const morfar = () => {
     setSobrenome(sobrenome.toUpperCase())
-  }
+    setNome('Desmorfar')
 
-  const 
+    if(nome === 'Desmorfar'){
+      setSobrenome(sobrenome.toLowerCase())
+      setNome('Morfar')
+    }
+  }
 
   /* let sobrenome = 'Queiroz' */
 
@@ -17,7 +22,7 @@ function App() {
     <h1>Gabriela</h1>
     <div>{sobrenome}</div>
     <br />
-    <button onClick={morfar}>Morfar</button>
+    <button onClick={morfar}>{nome}</button>
     </>
   )
 }
